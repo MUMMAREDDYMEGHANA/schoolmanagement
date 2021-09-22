@@ -1,0 +1,142 @@
+html {
+    font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    height: 100vh;
+    font-size: 1.6rem;
+    font-family: Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  #root{
+    height: 100%;
+   
+  }
+  /* Layout */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+      'header'
+      'main'
+      'footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 7rem 5fr 7rem;
+    height: 100%;
+  }
+  header {
+    grid-area: header;
+    background-color: #184f86;
+  }
+  main {
+    grid-area: main;
+    padding: 1rem;
+  }
+  footer {
+    grid-area: footer;
+    background-color: #184f86;
+    color: #ffffff; 
+    font-size: 3rem;
+  }
+   
+  /* Common */
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    color: #ff8000;
+  }
+  /* Header */
+  header a {
+    color: #ffffff;
+    padding: 1rem;
+  }
+  a.brand {
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .row.center {
+    justify-content: center;
+  }
+  /* Form */
+  .form {
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+  .form > div {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+  .form label {
+    margin: 1rem 0;
+    display: block;
+  }
+
+
+
+
+#register, #signin {
+    width: 500px;
+    border: 1px solid #d6d7da;
+    padding: 0px 10px 10px 10px;
+    border-radius: 10px;
+    font-family: arial;
+    line-height: 15px;
+    color: #333333;
+    font-size: 12px;
+    background: #ffffff;
+    margin: 50px auto;
+  }
+  
+  form label, form input {
+    display: block;
+    //margin-bottom: 10px;
+    width: 90%
+  }
+  
+  form input {
+    padding: 10px;
+    border: solid 1px #BDC7D8;
+  
+  }
+  
+  .button {
+    background-color: #00BFFF;
+    border-color: #3ac162;
+    font-weight: bold;
+    padding: 12px 15px;
+    color: #ffffff;
+  }
+  
+  .errorMsg {
+    color: #cc0000;
+    margin-bottom: 12px;
+  }
+  
+  .sucessMsg {
+    color: #6B8E23;
+    margin-bottom: 10px;
+  }
+
+.suc {
+  margin-bottom: 500px;
+  font-weight: bold;
+  font-size: 50px;
+  padding: 15px 15px;
+  justify-content: center;
+  margin: 50px auto;
+  position: absolute;
+  bottom: 200px;
+  left :250px;
+}
+
+
