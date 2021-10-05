@@ -1,30 +1,34 @@
-import react from 'react';
+import React from 'react';
 import SigninForm from './forms/SigninForm';
-import RegisterForm from './forms/RegisterForm';
-import { Route, Link} from 'react-router-dom';
+import RegistrationForm from './forms/RegistrationForm';
+import { BrowserRouter ,Route, Link} from 'react-router-dom';
 import './forms/style.css';
-import Demo from './forms/demo';
-
+import Dashboard from './forms/Dashboard';
+import Signout from './forms/Signout';
+ 
 function App() {
   return (
+    <BrowserRouter>
     <div className="grid-container">
-      <header className="row">
+     <header className="row">
         <div>
           <a className="brand" href="/">School Management System</a>
         </div>
         <div>
-          <Link to='/signin'>Sign In</Link>
-          <Link to='./register'>Register</Link>
+          <Link to='/signin'>Signin</Link>
+          <Link to='/register'>Register</Link>    
         </div>
       </header>
       <main>
         <Route path = "/signin" component = {SigninForm}></Route>
-        <Route path = "/register" component = {RegisterForm}></Route>
-        <Route path = "/demo" component = {Demo}></Route>
+        <Route path = "/register" component = {RegistrationForm}></Route>
+        <Route path = "/dashboard" component = {Dashboard}></Route>
       </main>
-      <footer>All Rights are Reserved</footer>
+      <footer className="footer" >All Rights are Reserved
+      </footer>
     </div>
+    </BrowserRouter>
   );
 }
-
+ 
 export default App;
