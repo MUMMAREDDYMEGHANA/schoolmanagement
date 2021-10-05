@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 
-export default function SigninForm(props) {
-  const [values, setValues] = useState({
-    email:"",
-    password:"",
-  });
+export default function SigninForm({setLogged}) {
+  const [values, setValues] = useState({});
+
   const history = useHistory();
   
 
   const submitHandler = (e) => {
     e.preventDefault();
+    setLogged(true);
+    window.localStorage.setItem('logged', true);
     history.push("/dashboard");
     // TODO: sign in action
   };
@@ -20,8 +20,7 @@ export default function SigninForm(props) {
     password:"",
   }
  
-  window.localStorage.setItem('user', JSON.stringify(person));
-  JSON.parse(window.localStorage.getItem('user'));
+ 
 
  
   return (

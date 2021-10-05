@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
  
 function Dashboard() {
-    const isSignedIn = true;
+
+  const history = useHistory();
+   useEffect(() => {
+     const islogged = localStorage.getItem('logged');
+     if(!islogged) history.push("/");
+   }, [])
   return (
      <div>
       {/* show the logout button if the user is logged in */}
-      {isSignedIn && <a href="/signout">Signout</a>}
-
+      {/* {isSignedIn && <a href="/signout">Signout</a>} */}
+    Dashboard
     </div>
   
   );
