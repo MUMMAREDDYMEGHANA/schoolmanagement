@@ -8,6 +8,9 @@ function Dashboard() {
      const islogged = localStorage.getItem('logged');
      if(!islogged) history.push("/");
    }, [])
+    useEffect(() => {
+     const isreged = localStorage.getItem('reged');
+   }, [])
   return (
      <div>
       {/* show the logout button if the user is logged in */}
