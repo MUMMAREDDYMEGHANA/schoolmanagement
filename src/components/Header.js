@@ -1,7 +1,7 @@
 import React from 'react'
 import {  Link} from 'react-router-dom'
 import { BrowserRouter,useHistory } from 'react-router-dom';
- 
+
 const Header = ({setLogged, logged}) => {
     const history = useHistory();
     const signOut = () => {
@@ -18,6 +18,7 @@ const Header = ({setLogged, logged}) => {
         <div>
           {logged ? (
             <button onClick={signOut}>SignOut</button>
+
           ) : (
             <div>
             <Link to='/signin'>Signin</Link>

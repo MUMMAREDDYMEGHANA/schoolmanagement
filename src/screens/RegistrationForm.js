@@ -2,31 +2,31 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
  
 export default function RegisterForm({setReged}) {
-  const [name, setname] = useState('');
+  const [Name, setName] = useState('');
   const [Email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [Password, setPassword] = useState('');
   const [confirmPassword, setconfirmPassword] = useState('');
   const [EmailIsTouched, setEmailIsTouched] = useState(false);
-  const [passwordIsTouched, setPasswordIsTouched] = useState(false);  
+  const [PasswordIsTouched, setPasswordIsTouched] = useState(false);  
   const [nameIsTouched, setnameIsTouched] = useState(false);
   const [confirmpasswordIsTouched, setconfirmPasswordIsTouched] = useState(false);
-  const validname =  name.trim() !== '';
-  const invalidname =  name.trim() === '' && nameIsTouched;
+  const validName =  Name.trim() !== '';
+  const invalidName =  Name.trim() === '' && nameIsTouched;
   const validEmail =  Email.trim() !== '';
   const invalidEmail =  Email.trim() === '' && EmailIsTouched;
-  const validPassword = password.trim() !== '';
-  const invalidPassword = password.trim() === '' && passwordIsTouched;
+  const validPassword = Password.trim() !== '';
+  const invalidPassword = Password.trim() === '' && PasswordIsTouched;
   const validconfirmPassword = confirmPassword.trim() !== '';
   const invalidconfirmPassword = confirmPassword.trim() === '' && confirmpasswordIsTouched;
 
   let formIsValid = false;
-    if (validEmail && validPassword && validname && validconfirmPassword) {
+    if (validEmail && validPassword && validName && validconfirmPassword) {
     formIsValid = true;
     } else {
     formIsValid = false;
   }
   const nameChangeHandler = (event) => {
-        setname(event.target.value);
+        setName(event.target.value);
   }
   const nameBlurHandler = (event) => {
         setnameIsTouched(true);
@@ -53,17 +53,17 @@ export default function RegisterForm({setReged}) {
       event.preventDefault();
       setReged(true);
       window.localStorage.setItem('reged', true);
-      if (password !== confirmPassword) {
+      if (Password !== confirmPassword) {
         alert('Password and confirm Password are not match');
       } else {
       alert('Registration success');
       }
-      if (!validEmail && !validPassword && !validname && !validconfirmPassword) {
+      if (!validEmail && !validPassword && !validName && !validconfirmPassword) {
         return;
       }
-      console.log(name);
+      console.log(Name);
       console.log(Email);
-      console.log(password);
+      console.log(Password);
       console.log(confirmPassword);
     }
  
@@ -75,8 +75,8 @@ export default function RegisterForm({setReged}) {
         </div>
          <div>
                 <label>Name</label>
-                <input type="text" onChange={nameChangeHandler} onBlur={ nameBlurHandler} value={ name}/>
-                {invalidname && (
+                <input type="text" onChange={nameChangeHandler} onBlur={nameBlurHandler} value={ Name}/>
+                {invalidName && (
                 <p className="errorText">please enter valid name</p>
             )}
           </div>
@@ -89,7 +89,7 @@ export default function RegisterForm({setReged}) {
           </div>
           <div>
                 <label>Password</label>
-                <input type="password" onChange={passwordChangeHandler} onBlur={passwordBlurHandler} value={password} />
+                <input type="password" onChange={passwordChangeHandler} onBlur={passwordBlurHandler} value={Password} />
                 {invalidPassword && (
                 <p className="errorText">please enter valid Password</p>
             )}
@@ -103,7 +103,7 @@ export default function RegisterForm({setReged}) {
             </div>
         <div>
           <label />
-          <button  disabled={ !name || !Email || !password || !confirmPassword} className="primary" type="submit">
+          <button  disabled={ !Name || !Email || !Password || !confirmPassword} className="primary" type="submit">
             Register
           </button>
         </div>

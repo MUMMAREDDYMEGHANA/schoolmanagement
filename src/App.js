@@ -5,6 +5,8 @@ import { BrowserRouter ,Route} from 'react-router-dom';
 import './components/style.css';
 import Dashboard from './components/Dashboard';
 import Header from './components/Header';
+import Data from './screens/Data'
+//import Sidebar from './components/SidebarData';
  
 function App() {
   const [logged, setLogged] = useState(false);
@@ -16,8 +18,9 @@ function App() {
      <Header setLogged={setLogged} logged={logged}  reged={reged} setReged={setReged}/>
       <main>
         <Route path = "/signin" component = {() => <SigninForm setLogged={setLogged}/>}></Route>
-      <Route path = "/register" component = {() => <RegistrationForm setReged={setReged}/>}></Route>
+        <Route path = "/register" component = {() => <RegistrationForm setReged={setReged}/>}></Route>
         <Route path = "/dashboard" component = {() => <Dashboard logged={logged} reged={reged} />}></Route>
+        <Route path = "/class"><Data/></Route>
       </main>
     </div>
       <footer className="footer" >All Rights are Reserved
